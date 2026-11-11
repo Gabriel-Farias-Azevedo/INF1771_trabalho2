@@ -4,3 +4,5 @@ __pycache__/
 .idea/
 .DS_Store
 Thumbs.db
+/testes/resultados/resultados.csv
+/testes/resultados/resumo.csv
