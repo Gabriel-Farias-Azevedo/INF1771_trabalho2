@@ -14,7 +14,7 @@ os.chdir(RAIZ)
 
 mapa_arquivo = sys.argv[1] if len(sys.argv) > 1 else 'mapa_medio.pl'
 
-auto_play = True
+auto_play = True # desligar para controlar manualmente
 auto_play_tempo = 0.3
 show_map = False
 
@@ -180,25 +180,23 @@ def update(dt):
 
 
 def key_pressed(event):
-    global show_map, auto_play
-    if event.type != pygame.KEYDOWN:
-        return
-    if not auto_play and not encerrado and player_pos[2] != 'morto':
-        if event.key == pygame.K_LEFT:
-            executa('virar_esquerda')
-        elif event.key == pygame.K_RIGHT:
-            executa('virar_direita')
-        elif event.key == pygame.K_UP:
-            executa('andar')
-        elif event.key == pygame.K_SPACE:
-            executa('pegar')
-    if event.key == pygame.K_a:
-        auto_play = not auto_play
-    elif event.key == pygame.K_m:
-        show_map = not show_map
-        atualiza_estado()
-    elif event.key == pygame.K_r:
-        iniciar()
+    global show_map
+    if event.type == pygame.KEYDOWN:
+
+        if not auto_play and player_pos[2] != 'morto':
+            if event.key == pygame.K_LEFT:
+                executa('virar_esquerda')
+            elif event.key == pygame.K_RIGHT:
+                executa('virar_direita')
+            elif event.key == pygame.K_UP:
+                executa('andar')
+
+            if event.key == pygame.K_SPACE:
+                executa('pegar')
+
+        if event.key == pygame.K_m:
+            show_map = not show_map
+            atualiza_estado()
 
 
 def main_loop(screen, max_frames=None):
