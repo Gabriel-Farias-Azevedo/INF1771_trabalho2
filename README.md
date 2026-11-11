@@ -32,5 +32,3 @@ swipl -g "joga('mapa_facil.pl')" -t halt src/main.pl
 swipl -g "joga('mapa_medio.pl')" -t halt src/main.pl
 swipl -g "joga('mapa_dificil.pl')" -t halt src/main.pl
 ```
-
-**O que aparece no mapa:** contorno verde = casa segura ainda não visitada · ícone colorido = perigo provado · ícone cinza = perigo possível.

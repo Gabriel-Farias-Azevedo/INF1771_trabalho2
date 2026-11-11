@@ -5,7 +5,7 @@
 
 limite_risco(300).
 energia_baixa(50).
-voltar_origem(false).
+voltar_origem(true).
 total_ouros(3).
 
 % politica de decisao por prioridade (ordem top-down)
